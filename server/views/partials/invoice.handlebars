@@ -1,0 +1,28 @@
+<h1>Invoice for {{person.0.name}}</h1>
+
+<form method="post" action="/invoice/add">
+  <fieldset>
+    <label for="rate">
+      Rate:
+    </label>
+    <input type="number" name="rate" />
+  </fieldset>
+  <input type="hidden" name="personId" value="{{person.0.id}}" />
+  <input type="submit" value="submit" />
+</form>
+
+<table border="1">
+  <thead>
+    <th>Invoice Id</th>
+    <th>Rate</th>
+  </thead>
+  {{#if person.length}}
+    {{#each person}}
+      <tr>
+        <td>{{invoices.id}}</td>
+        <td>{{invoices.rate}}</td>
+        <td><a href="/timesheet?invoiceId={{invoices.id}}">Add Timesheet</a></td>
+      </tr>
+    {{/each}}
+  {{/if}}
+</table>

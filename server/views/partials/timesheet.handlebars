@@ -1,2 +1,43 @@
-<h1>Timesheet</h1>
-{{test}}
+<h1>Add a Timesheet for Invoice #{{invoice.0.id}}</h1>
+<form method="post" action="/timesheet/add">
+  <fieldset>
+    <label for="hours_worked">
+      Hours Worked:
+    </label>
+    <input type="text" name="hours_worked" id="hours_worked"/>
+  </fieldset>
+  <fieldset>
+    <label for="week_num">
+      Week Num:
+    </label>
+    <input type="text" name="week_num" id="week_num" />
+  </fieldset>
+  <fieldset>
+    <label for="year">Year:</label>
+    <input type="text" name="year" />
+  </fieldset>
+  <input type="hidden" name="invoiceId" value="{{invoice.0.id}}" />
+  <input type="submit" value="submit" />
+</form>
+
+<a href="/invoice?personId={{invoice.0.personId}}">Go to invoice</a>
+<h1>Subtotal for this invoice ${{total}}
+  for an hourly rate of ${{invoice.0.rate}}</h1>
+<h1>Tax Rate (25%): ${{taxes}}</h1>
+<h1>Final Total: ${{final_total}}</h1>
+<table border="1">
+  <thead>
+    <th>ID</th>
+    <th>Week Num</th>
+    <th>Year</th>
+    <th>Hours Worked</th>
+  </thead>
+  {{#each invoice}}
+    <tr>
+      <td>{{timesheets.id}}</td>
+      <td>{{timesheets.week_num}}</td>
+      <td>{{timesheets.year}}</td>
+      <td>{{timesheets.hours_worked}}</td>
+    </tr>
+  {{/each}}
+</table>

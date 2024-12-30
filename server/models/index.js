@@ -1,7 +1,9 @@
 const Person = require("./person.model");
-const WorkWeek = require("./work_week.model");
+const Timesheet = require("./timesheet.model");
+const Invoice = require("./invoice.model");
 
 const Models = {};
 Models.Person = Person;
-Models.WorkWeek = WorkWeek;
+Models.Timesheet = Timesheet;
+Models.Invoice = Invoice;
 module.exports = Models;

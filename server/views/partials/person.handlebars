@@ -1,0 +1,19 @@
+<form method="post" action="/person/add">
+  <fieldset>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" />
+  </fieldset>
+  <input type="submit" value="submit" />
+</form>
+
+<table class="all_people" border="1">
+  <thead>
+    <th>Name</th><th>Action</th>
+  </thead>
+  {{#each all as |people|}}
+    <tr>
+      <td>{{people.name}}</td>
+      <td><a href="/invoice?personId={{people.id}}">Add or View Invoices</a></td>
+    </tr>
+  {{/each}}
+</table>

@@ -1,7 +1,8 @@
+
 const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = require("../connection");
-const WorkWeek = require("./work_week.model");
+const Invoice = require("./invoice.model");
 
 const Person = sequelize.define("person", {
   name: {
@@ -22,6 +23,6 @@ sequelize
     console.error("Unable to create table : ", error);
   });
 
-Person.hasMany(WorkWeek);
+Person.hasMany(Invoice);
 
 module.exports = Person;

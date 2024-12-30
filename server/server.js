@@ -7,6 +7,7 @@ const handlebars = require("express-handlebars");
 
 // parse application/json
 app.use(express.json());
+app.use(express.urlencoded());
 routes.appRoutes(app);
 app.set("views", "./views/partials");
 app.set("view engine", "handlebars");
