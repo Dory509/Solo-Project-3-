@@ -4,17 +4,17 @@
     <label for="hours_worked">
       Hours Worked:
     </label>
-    <input type="text" name="hours_worked" id="hours_worked"/>
+    <input type="text" name="hours_worked" id="hours_worked" required/>
   </fieldset>
   <fieldset>
     <label for="week_num">
       Week Num:
     </label>
-    <input type="text" name="week_num" id="week_num" />
+    <input type="text" name="week_num" id="week_num" required />
   </fieldset>
   <fieldset>
     <label for="year">Year:</label>
-    <input type="text" name="year" />
+    <input type="text" name="year" required/>
   </fieldset>
   <input type="hidden" name="invoiceId" value="{{invoice.0.id}}" />
   <input type="submit" value="submit" />
